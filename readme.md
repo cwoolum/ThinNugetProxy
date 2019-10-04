@@ -4,7 +4,7 @@
 
 This is a super thin Nuget Proxy that is used to proxy connections to an Azure Artifacts Nuget Repository.
 
-It is a super stripped down version of [NugetProxy](https://github.com/loic-sharma/NugetProxy)
+It is a super stripped down version of [BaGet](https://github.com/loic-sharma/Baget)
 
 ## Usage
 
