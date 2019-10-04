@@ -23,6 +23,8 @@ namespace BaGet.Core
         [Range(0, int.MaxValue)]
         public int PackageDownloadTimeoutSeconds { get; set; } = 600;
 
+        public string AccessToken { get; set; }
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if (Enabled && PackageSource == null)

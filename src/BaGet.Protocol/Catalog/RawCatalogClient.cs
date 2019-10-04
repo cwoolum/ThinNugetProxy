@@ -14,7 +14,7 @@ namespace BaGet.Protocol.Internal
         public RawCatalogClient(HttpClient httpClient, string catalogUrl)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
-            _catalogUrl = catalogUrl ?? throw new ArgumentNullException(nameof(catalogUrl));
+            _catalogUrl = catalogUrl;// ?? throw new ArgumentNullException(nameof(catalogUrl));
         }
 
         public async Task<CatalogIndex> GetIndexAsync(CancellationToken cancellationToken = default)

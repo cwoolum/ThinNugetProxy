@@ -1,7 +1,8 @@
+using Microsoft.Extensions.Options;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.Extensions.Options;
 
 namespace BaGet.Core
 {
@@ -31,8 +32,6 @@ namespace BaGet.Core
         {
             if (options is BaGetOptions) return null;
 
-            if (options is DatabaseOptions) return "Database";
-            if (options is StorageOptions) return "Storage";
             if (options is SearchOptions) return "Search";
 
             // Trim the "Options" suffix.

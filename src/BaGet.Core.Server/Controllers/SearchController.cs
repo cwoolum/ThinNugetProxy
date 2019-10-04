@@ -28,6 +28,7 @@ namespace BaGet.Controllers
             [FromQuery]string framework = null,
             CancellationToken cancellationToken = default)
         {
+
             var includeSemVer2 = semVerLevel == "2.0.0";
 
             return await _searchService.SearchAsync(

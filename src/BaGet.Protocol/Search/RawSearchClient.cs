@@ -30,7 +30,7 @@ namespace BaGet.Protocol.Internal
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             _searchUrl = searchUrl ?? throw new ArgumentNullException(nameof(searchUrl));
-            _autocompleteUrl = autocompleteUrl ?? throw new ArgumentNullException(nameof(autocompleteUrl));
+            _autocompleteUrl = autocompleteUrl; //?? throw new ArgumentNullException(nameof(autocompleteUrl));
         }
 
         public async Task<AutocompleteResponse> AutocompleteAsync(

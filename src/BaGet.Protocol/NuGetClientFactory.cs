@@ -1,5 +1,6 @@
 using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using BaGet.Protocol.Internal;
@@ -35,9 +36,15 @@ namespace BaGet.Protocol
         ///
         /// For NuGet.org, use https://api.nuget.org/v3/index.json
         /// </param>
-        public NuGetClientFactory(HttpClient httpClient, string serviceIndexUrl)
+        /// <param name="accessToken"></param>
+        public NuGetClientFactory(HttpClient httpClient, string serviceIndexUrl, string accessToken)
         {
             _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes("any:" + accessToken);
+            var encoded = Convert.ToBase64String(plainTextBytes);
+
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", encoded);
+
             _serviceIndexUrl = serviceIndexUrl ?? throw new ArgumentNullException(nameof(serviceIndexUrl));
 
             _mutex = new SemaphoreSlim(1, 1);

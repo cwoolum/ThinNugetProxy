@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using NuGet.Versioning;
@@ -41,6 +42,6 @@ namespace BaGet.Core
         /// <param name="version">The package's version</param>
         /// <param name="cancellationToken">The token to cancel the mirroring</param>
         /// <returns>A task that completes when the package has been mirrored.</returns>
-        Task MirrorAsync(string id, NuGetVersion version, CancellationToken cancellationToken);
+        Task<FileStream> MirrorAsync(string id, NuGetVersion version, CancellationToken cancellationToken);
     }
 }

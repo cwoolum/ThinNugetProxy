@@ -25,7 +25,6 @@ namespace BaGet.Core.Server.Extensions
 
             services.AddCors();
             services.AddHttpContextAccessor();
-            services.AddSingleton<IConfigureOptions<CorsOptions>, ConfigureCorsOptions>();
             services.AddSingleton<IConfigureOptions<ForwardedHeadersOptions>, ConfigureForwardedHeadersOptions>();
             services.Configure<FormOptions>(options =>
             {

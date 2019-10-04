@@ -34,14 +34,14 @@ namespace BaGet.Protocol
         ///
         /// For NuGet.org, use https://api.nuget.org/v3/index.json
         /// </param>
-        public NuGetClient(string serviceIndexUrl)
+        public NuGetClient(string serviceIndexUrl, string accessToken)
         {
             var httpClient = new HttpClient(new HttpClientHandler
             {
                 AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate,
             });
 
-            _clientFactory = new NuGetClientFactory(httpClient, serviceIndexUrl);
+            _clientFactory = new NuGetClientFactory(httpClient, serviceIndexUrl, accessToken);
         }
 
         /// <summary>

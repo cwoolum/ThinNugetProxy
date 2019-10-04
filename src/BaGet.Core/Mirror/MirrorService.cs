@@ -11,24 +11,16 @@ using NuGet.Versioning;
 
 namespace BaGet.Core
 {
-    using PackageIdentity = NuGet.Packaging.Core.PackageIdentity;
-
     public class MirrorService : IMirrorService
     {
-        private readonly IPackageService _localPackages;
         private readonly NuGetClient _upstreamClient;
-        private readonly IPackageIndexingService _indexer;
         private readonly ILogger<MirrorService> _logger;
 
         public MirrorService(
-            IPackageService localPackages,
             NuGetClient upstreamClient,
-            IPackageIndexingService indexer,
             ILogger<MirrorService> logger)
         {
-            _localPackages = localPackages ?? throw new ArgumentNullException(nameof(localPackages));
             _upstreamClient = upstreamClient ?? throw new ArgumentNullException(nameof(upstreamClient));
-            _indexer = indexer ?? throw new ArgumentNullException(nameof(indexer));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
@@ -42,11 +34,8 @@ namespace BaGet.Core
                 return null;
             }
 
-            // Merge the local package versions into the upstream package versions.
-            var localPackages = await _localPackages.FindAsync(id, includeUnlisted: true);
-            var localVersions = localPackages.Select(p => p.Version);
 
-            return upstreamVersions.Concat(localVersions).Distinct().ToList();
+            return upstreamVersions.ToList();
         }
 
         public async Task<IReadOnlyList<Package>> FindPackagesOrNullAsync(string id, CancellationToken cancellationToken)
@@ -59,43 +48,19 @@ namespace BaGet.Core
 
             var upstreamPackages = items.Select(ToPackage);
 
-            // Return the upstream packages if there are no local packages matching the package id.
-            var localPackages = await _localPackages.FindAsync(id, includeUnlisted: true);
-            if (!localPackages.Any())
-            {
-                return upstreamPackages.ToList();
-            }
 
-            // Otherwise, merge the local packages into the upstream packages.
-            var result = upstreamPackages.ToDictionary(p => new PackageIdentity(p.Id, p.Version));
-            var local = localPackages.ToDictionary(p => new PackageIdentity(p.Id, p.Version));
-
-            foreach (var localPackage in local)
-            {
-                result[localPackage.Key] = localPackage.Value;
-            }
-
-            return result.Values.ToList();
+            return upstreamPackages.ToList();
         }
 
-        public async Task MirrorAsync(string id, NuGetVersion version, CancellationToken cancellationToken)
+        public async Task<FileStream> MirrorAsync(string id, NuGetVersion version, CancellationToken cancellationToken)
         {
-            if (await _localPackages.ExistsAsync(id, version))
-            {
-                return;
-            }
 
             _logger.LogInformation(
                 "Package {PackageId} {PackageVersion} does not exist locally. Indexing from upstream feed...",
                 id,
                 version);
 
-            await IndexFromSourceAsync(id, version, cancellationToken);
-
-            _logger.LogInformation(
-                "Finished indexing {PackageId} {PackageVersion} from the upstream feed",
-                id,
-                version);
+            return await IndexFromSourceAsync(id, version, cancellationToken);
         }
 
         private Package ToPackage(PackageMetadata metadata)
@@ -186,7 +151,7 @@ namespace BaGet.Core
             });
         }
 
-        private async Task IndexFromSourceAsync(string id, NuGetVersion version, CancellationToken cancellationToken)
+        private async Task<FileStream> IndexFromSourceAsync(string id, NuGetVersion version, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
@@ -195,7 +160,7 @@ namespace BaGet.Core
                 id,
                 version);
 
-            Stream packageStream = null;
+            FileStream packageStream = null;
 
             try
             {
@@ -204,18 +169,6 @@ namespace BaGet.Core
                     packageStream = await stream.AsTemporaryFileStreamAsync();
                 }
 
-                _logger.LogInformation(
-                    "Downloaded package {PackageId} {PackageVersion}, indexing...",
-                    id,
-                    version);
-
-                var result = await _indexer.IndexAsync(packageStream, cancellationToken);
-
-                _logger.LogInformation(
-                    "Finished indexing package {PackageId} {PackageVersion} with result {Result}",
-                    id,
-                    version,
-                    result);
             }
             catch (PackageNotFoundException)
             {
@@ -223,8 +176,6 @@ namespace BaGet.Core
                     "Failed to download package {PackageId} {PackageVersion}",
                     id,
                     version);
-
-                return;
             }
             catch (Exception e)
             {
@@ -234,10 +185,10 @@ namespace BaGet.Core
                     id,
                     version);
             }
-            finally
-            {
-                packageStream?.Dispose();
-            }
+
+
+            return packageStream;
+
         }
     }
 }

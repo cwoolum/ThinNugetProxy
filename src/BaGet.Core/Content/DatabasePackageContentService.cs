@@ -16,17 +16,13 @@ namespace BaGet.Core.Content
     public class DatabasePackageContentService : IPackageContentService
     {
         private readonly IMirrorService _mirror;
-        private readonly IPackageService _packages;
-        private readonly IPackageStorageService _storage;
+
 
         public DatabasePackageContentService(
-            IMirrorService mirror,
-            IPackageService packages,
-            IPackageStorageService storage)
+            IMirrorService mirror)
         {
             _mirror = mirror ?? throw new ArgumentNullException(nameof(mirror));
-            _packages = packages ?? throw new ArgumentNullException(nameof(packages));
-            _storage = storage ?? throw new ArgumentNullException(nameof(storage));
+
         }
 
         public async Task<PackageVersionsResponse> GetPackageVersionsOrNullAsync(
@@ -36,18 +32,6 @@ namespace BaGet.Core.Content
             // First, attempt to find all package versions using the upstream source.
             var versions = await _mirror.FindPackageVersionsOrNullAsync(id, cancellationToken);
 
-            if (versions == null)
-            {
-                // Fallback to the local packages if mirroring is disabled.
-                var packages = await _packages.FindAsync(id, includeUnlisted: true);
-
-                if (!packages.Any())
-                {
-                    return null;
-                }
-
-                versions = packages.Select(p => p.Version).ToList();
-            }
 
             return new PackageVersionsResponse
             {
@@ -64,41 +48,21 @@ namespace BaGet.Core.Content
             CancellationToken cancellationToken = default)
         {
             // Allow read-through caching if it is configured.
-            await _mirror.MirrorAsync(id, version, cancellationToken);
-
-            if (!await _packages.AddDownloadAsync(id, version))
-            {
-                return null;
-            }
-
-            return await _storage.GetPackageStreamAsync(id, version, cancellationToken);
+            return await _mirror.MirrorAsync(id, version, cancellationToken);
         }
 
         public async Task<Stream> GetPackageManifestStreamOrNullAsync(string id, NuGetVersion version, CancellationToken cancellationToken = default)
         {
             // Allow read-through caching if it is configured.
-            await _mirror.MirrorAsync(id, version, cancellationToken);
+            return await _mirror.MirrorAsync(id, version, cancellationToken);
 
-            if (!await _packages.ExistsAsync(id, version))
-            {
-                return null;
-            }
 
-            return await _storage.GetNuspecStreamAsync(id, version, cancellationToken);
         }
 
         public async Task<Stream> GetPackageReadmeStreamOrNullAsync(string id, NuGetVersion version, CancellationToken cancellationToken = default)
         {
             // Allow read-through caching if it is configured.
-            await _mirror.MirrorAsync(id, version, cancellationToken);
-
-            var package = await _packages.FindOrNullAsync(id, version, includeUnlisted: true, cancellationToken);
-            if (!package.HasReadme)
-            {
-                return null;
-            }
-
-            return await _storage.GetReadmeStreamAsync(id, version, cancellationToken);
+            return await _mirror.MirrorAsync(id, version, cancellationToken);
         }
     }
 }

@@ -14,29 +14,6 @@ namespace BaGet.Extensions
                 defaults: new { controller = "ServiceIndex", action = "GetAsync" });
         }
 
-        public static IRouteBuilder MapPackagePublishRoutes(this IRouteBuilder routes)
-        {
-            routes.MapRoute(
-                name: Routes.UploadPackageRouteName,
-                template: "api/v2/package",
-                defaults: new { controller = "PackagePublish", action = "Upload" },
-                constraints: new { httpMethod = new HttpMethodRouteConstraint("PUT") });
-
-            routes.MapRoute(
-                name: Routes.DeleteRouteName,
-                template: "api/v2/package/{id}/{version}",
-                defaults: new { controller = "PackagePublish", action = "Delete" },
-                constraints: new { httpMethod = new HttpMethodRouteConstraint("DELETE") });
-
-            routes.MapRoute(
-                name: Routes.RelistRouteName,
-                template: "api/v2/package/{id}/{version}",
-                defaults: new { controller = "PackagePublish", action = "Relist" },
-                constraints: new { httpMethod = new HttpMethodRouteConstraint("POST") });
-
-            return routes;
-        }
-
         public static IRouteBuilder MapSymbolRoutes(this IRouteBuilder routes)
         {
             routes.MapRoute(
@@ -49,7 +26,7 @@ namespace BaGet.Extensions
                 name: Routes.SymbolDownloadRouteName,
                 template: "api/download/symbols/{file}/{key}/{file2}",
                 defaults: new { controller = "Symbol", action = "Get" });
-            
+
             routes.MapRoute(
                 name: Routes.SymbolDownloadRouteName,
                 template: "api/download/symbols/{prefix}/{file}/{key}/{file2}",
