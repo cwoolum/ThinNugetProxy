@@ -43,11 +43,11 @@ steps:
 
 In your Dockerfile, you'll want to make sure that you add the host IP as a source.
 
-```
+``` dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS base
 WORKDIR /src
 
-# 172.17.0.1 seems to always be the host IP when used in Azure Pipelines but we don't want to resly on that.
+# 172.17.0.1 seems to always be the host IP when used in Azure Pipelines but we don't want to rely on that.
 # TODO: Make this work ->> RUN ip -4 route list match 0/0 | cut -d' ' -f3 | awk '{print $1" host.docker.internal"}' >> /etc/hosts
 
 COPY NugetTest.csproj .
