@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NuGet.Versioning;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     // See https://github.com/NuGet/NuGet.Services.Metadata/blob/master/src/NuGet.Indexing/Downloads.cs
     public class PackageDownloadsJsonSource : IPackageDownloadsSource

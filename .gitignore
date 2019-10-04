@@ -269,10 +269,10 @@ __pycache__/
 # tools/
 
 # Ignore client app cache
-**/Baget.UI/.cache
+**/NugetProxy.UI/.cache
 
 # Ignore client dist files
-**/Baget.UI/dist/
+**/NugetProxy.UI/dist/
 
 # Ignore database file
-**/baget.db 
+**/NugetProxy.db 

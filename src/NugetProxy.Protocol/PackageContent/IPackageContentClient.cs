@@ -1,10 +1,10 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 using NuGet.Versioning;
 
-namespace BaGet.Protocol
+namespace NugetProxy.Protocol
 {
     /// <summary>
     /// The Package Content resource, used to download NuGet packages and to fetch other metadata.

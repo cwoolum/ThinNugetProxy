@@ -1,8 +1,8 @@
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 
-namespace BaGet.Protocol.Catalog
+namespace NugetProxy.Protocol.Catalog
 {
     /// <summary>
     /// An interface which allows custom processing of catalog leaves. This interface should be implemented when the

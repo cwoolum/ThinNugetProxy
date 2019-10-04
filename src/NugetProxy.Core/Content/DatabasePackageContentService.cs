@@ -3,10 +3,10 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 using NuGet.Versioning;
 
-namespace BaGet.Core.Content
+namespace NugetProxy.Core.Content
 {
     /// <summary>
     /// Implements the NuGet Package Content resource. Supports read-through caching.

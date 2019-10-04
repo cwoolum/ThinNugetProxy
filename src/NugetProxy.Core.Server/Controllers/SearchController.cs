@@ -1,11 +1,11 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Core;
-using BaGet.Protocol.Models;
+using NugetProxy.Core;
+using NugetProxy.Protocol.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BaGet.Controllers
+namespace NugetProxy.Controllers
 {
     public class SearchController : Controller
     {
@@ -48,7 +48,7 @@ namespace BaGet.Controllers
         {
             // TODO: Add other autocomplete parameters
             // TODO: Support versions autocomplete.
-            // See: https://github.com/loic-sharma/BaGet/issues/291
+            // See: https://github.com/loic-sharma/NugetProxy/issues/291
             return await _searchService.AutocompleteAsync(
                 query,
                 cancellationToken: cancellationToken);

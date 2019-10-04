@@ -1,6 +1,6 @@
 using NuGet.Versioning;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     /// <summary>
     /// Used to create URLs to resources in the NuGet protocol.

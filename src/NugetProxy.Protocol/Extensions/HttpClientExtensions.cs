@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace BaGet.Protocol
+namespace NugetProxy.Protocol
 {
     internal static class HttpClientExtensions
     {

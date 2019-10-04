@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using NuGet.Versioning;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     // See NuGetGallery's: https://github.com/NuGet/NuGetGallery/blob/master/src/NuGetGallery.Core/Entities/Package.cs
     public class Package
@@ -16,7 +16,7 @@ namespace BaGet.Core
             get
             {
                 // Favor the original version string as it contains more information.
-                // Packages uploaded with older versions of BaGet may not have the original version string.
+                // Packages uploaded with older versions of NugetProxy may not have the original version string.
                 return NuGetVersion.Parse(
                     OriginalVersionString != null
                         ? OriginalVersionString

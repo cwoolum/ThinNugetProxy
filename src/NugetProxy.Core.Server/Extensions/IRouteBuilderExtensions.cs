@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.AspNetCore.Routing.Constraints;
 
-namespace BaGet.Extensions
+namespace NugetProxy.Extensions
 {
     public static class IRouteBuilderExtensions
     {

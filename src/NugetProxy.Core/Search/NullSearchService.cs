@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     /// <summary>
     /// A minimal search service implementation, used for advanced scenarios.

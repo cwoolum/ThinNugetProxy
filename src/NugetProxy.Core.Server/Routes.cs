@@ -1,4 +1,4 @@
-namespace BaGet
+namespace NugetProxy
 {
     public class Routes
     {

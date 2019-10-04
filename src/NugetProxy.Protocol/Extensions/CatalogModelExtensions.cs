@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 using NuGet.Frameworks;
 using NuGet.Packaging.Core;
 using NuGet.Versioning;
 
-namespace BaGet.Protocol
+namespace NugetProxy.Protocol
 {
     /// <summary>
     /// These are documented interpretations of values returned by the catalog API.

@@ -1,18 +1,18 @@
 using System;
-using BaGet.Core;
+using NugetProxy.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using NuGet.Versioning;
 
-namespace BaGet
+namespace NugetProxy
 {
     // TODO: This should validate the "Host" header against known valid values
-    public class BaGetUrlGenerator : IUrlGenerator
+    public class NugetProxyUrlGenerator : IUrlGenerator
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly LinkGenerator _linkGenerator;
 
-        public BaGetUrlGenerator(IHttpContextAccessor httpContextAccessor, LinkGenerator linkGenerator)
+        public NugetProxyUrlGenerator(IHttpContextAccessor httpContextAccessor, LinkGenerator linkGenerator)
         {
             _httpContextAccessor = httpContextAccessor ?? throw new ArgumentNullException(nameof(httpContextAccessor));
             _linkGenerator = linkGenerator ?? throw new ArgumentNullException(nameof(linkGenerator));
@@ -70,7 +70,7 @@ namespace BaGet
 
         public string GetRegistrationPageUrl(string id, NuGetVersion lower, NuGetVersion upper)
         {
-            // BaGet does not support paging the registration resource.
+            // NugetProxy does not support paging the registration resource.
             throw new NotImplementedException();
         }
 

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace BaGet.Protocol.Models
+namespace NugetProxy.Protocol.Models
 {
     /// <summary>
     /// A package's metadata.

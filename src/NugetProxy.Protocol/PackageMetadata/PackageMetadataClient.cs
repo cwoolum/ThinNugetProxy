@@ -1,10 +1,10 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 using NuGet.Versioning;
 
-namespace BaGet.Protocol.Internal
+namespace NugetProxy.Protocol.Internal
 {
     public class PackageMetadataClient : IPackageMetadataClient
     {

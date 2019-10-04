@@ -1,4 +1,4 @@
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     public class TargetFramework
     {

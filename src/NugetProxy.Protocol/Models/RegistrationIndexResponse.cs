@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace BaGet.Protocol.Models
+namespace NugetProxy.Protocol.Models
 {
     /// <summary>
     /// The metadata for a package and all of its versions.

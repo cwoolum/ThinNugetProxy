@@ -2,9 +2,9 @@ using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 
-namespace BaGet.Protocol.Internal
+namespace NugetProxy.Protocol.Internal
 {
     public class RawCatalogClient : ICatalogClient
     {

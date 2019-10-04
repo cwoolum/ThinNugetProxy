@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     public static class StreamExtensions
     {

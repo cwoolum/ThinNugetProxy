@@ -1,7 +1,7 @@
-using BaGet.Core;
-using BaGet.Core.Content;
-using BaGet.Core.Server.Extensions;
-using BaGet.Protocol;
+using NugetProxy.Core;
+using NugetProxy.Core.Content;
+using NugetProxy.Core.Server.Extensions;
+using NugetProxy.Protocol;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,11 +11,11 @@ using System.Net;
 using System.Net.Http;
 using System.Reflection;
 
-namespace BaGet.Extensions
+namespace NugetProxy.Extensions
 {
     public static class IServiceCollectionExtensions
     {
-        public static IServiceCollection ConfigureBaGet(
+        public static IServiceCollection ConfigureNugetProxy(
             this IServiceCollection services,
             IConfiguration configuration,
             bool httpServices = false)
@@ -27,8 +27,8 @@ namespace BaGet.Extensions
                 services.ConfigureHttpServices();
             }
 
-            services.AddSingleton<IServiceIndexService, BaGetServiceIndex>();
-            services.AddSingleton<IUrlGenerator, BaGetUrlGenerator>();
+            services.AddSingleton<IServiceIndexService, NugetProxyServiceIndex>();
+            services.AddSingleton<IUrlGenerator, NugetProxyUrlGenerator>();
             services.AddSingleton<ISearchService, NullSearchService>();
             services.AddSingleton<IPackageContentService, DatabasePackageContentService>();
             services.AddMirrorServices();

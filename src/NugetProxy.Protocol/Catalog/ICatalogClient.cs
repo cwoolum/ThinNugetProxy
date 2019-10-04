@@ -1,8 +1,8 @@
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 
-namespace BaGet.Protocol
+namespace NugetProxy.Protocol
 {
     /// <summary>
     /// The Catalog client, used to discover package events.

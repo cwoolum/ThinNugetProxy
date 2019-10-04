@@ -1,9 +1,9 @@
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Protocol.Catalog;
+using NugetProxy.Protocol.Catalog;
 using Microsoft.Extensions.Logging;
 
-namespace BaGet.Protocol
+namespace NugetProxy.Protocol
 {
     public static class NuGetClientFactoryExtensions
     {

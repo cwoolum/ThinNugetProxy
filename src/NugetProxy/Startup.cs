@@ -1,4 +1,4 @@
-using BaGet.Extensions;
+using NugetProxy.Extensions;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using System;
 
-namespace BaGet
+namespace NugetProxy
 {
     public class Startup
     {
@@ -42,7 +42,7 @@ namespace BaGet
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.ConfigureBaGet(Configuration, httpServices: true);
+            services.ConfigureNugetProxy(Configuration, httpServices: true);
         }
     }
 }

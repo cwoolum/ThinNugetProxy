@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace BaGet.Protocol.Models
+namespace NugetProxy.Protocol.Models
 {
     /// <summary>
     /// A single version from a <see cref="SearchResult"/>.

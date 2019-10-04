@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace BaGet.Protocol.Internal
+namespace NugetProxy.Protocol.Internal
 {
     internal class PackageDependencyRangeConverter : JsonConverter
     {

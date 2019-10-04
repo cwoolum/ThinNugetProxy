@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace BaGet.Protocol.Models
+namespace NugetProxy.Protocol.Models
 {
     /// <summary>
     /// The registration page object found in the registration index.

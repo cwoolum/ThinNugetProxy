@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using NuGet.Versioning;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     /// <summary>
     /// Indexes packages from an external source.

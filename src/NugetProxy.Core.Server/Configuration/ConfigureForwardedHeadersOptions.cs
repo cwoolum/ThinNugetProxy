@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Options;
 
-namespace BaGet.Configuration
+namespace NugetProxy.Configuration
 {
     public class ConfigureForwardedHeadersOptions : IConfigureOptions<ForwardedHeadersOptions>
     {

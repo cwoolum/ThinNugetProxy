@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     /// <summary>
     /// The package ids that depend on the queried package.

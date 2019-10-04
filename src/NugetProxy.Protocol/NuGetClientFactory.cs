@@ -3,9 +3,9 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Protocol.Internal;
+using NugetProxy.Protocol.Internal;
 
-namespace BaGet.Protocol
+namespace NugetProxy.Protocol
 {
     /// <summary>
     /// The <see cref="NuGetClientFactory"/> creates clients to interact with a NuGet server.

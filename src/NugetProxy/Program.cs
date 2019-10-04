@@ -1,4 +1,4 @@
-using BaGet.Extensions;
+using NugetProxy.Extensions;
 
 using McMaster.Extensions.CommandLineUtils;
 
@@ -9,7 +9,7 @@ using Microsoft.Extensions.Hosting;
 
 using System;
 
-namespace BaGet
+namespace NugetProxy
 {
     public class Program
     {
@@ -17,7 +17,7 @@ namespace BaGet
         {
             var app = new CommandLineApplication
             {
-                Name = "baget",
+                Name = "NugetProxy",
                 Description = "A light-weight NuGet service",
             };
 
@@ -38,9 +38,9 @@ namespace BaGet
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
             return new HostBuilder()
-                .ConfigureBaGetConfiguration(args)
-                .ConfigureBaGetServices()
-                .ConfigureBaGetLogging();
+                .ConfigureNugetProxyConfiguration(args)
+                .ConfigureNugetProxyServices()
+                .ConfigureNugetProxyLogging();
         }
     }
 }

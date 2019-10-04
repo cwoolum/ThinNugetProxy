@@ -1,11 +1,11 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Core;
-using BaGet.Protocol.Models;
+using NugetProxy.Core;
+using NugetProxy.Protocol.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BaGet.Controllers
+namespace NugetProxy.Controllers
 {
     /// <summary>
     /// The NuGet Service Index. This aids NuGet client to discover this server's services.

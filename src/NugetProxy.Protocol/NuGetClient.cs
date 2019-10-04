@@ -1,4 +1,4 @@
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 
 using NuGet.Versioning;
 
@@ -11,7 +11,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BaGet.Protocol
+namespace NugetProxy.Protocol
 {
     /// <summary>
     /// The <see cref="NuGetClient"/> allows you to interact with a NuGet server.

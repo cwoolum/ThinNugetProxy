@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 using Newtonsoft.Json;
 
-namespace BaGet.Protocol.Internal
+namespace NugetProxy.Protocol.Internal
 {
     /// <summary>
     /// Based off: https://github.com/NuGet/NuGet.Services.Metadata/blob/64af0b59c5a79e0143f0808b39946df9f16cb2e7/src/NuGet.Protocol.Catalog/Serialization/BaseCatalogLeafConverter.cs

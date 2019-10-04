@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
-    public class BaGetServiceIndex : IServiceIndexService
+    public class NugetProxyServiceIndex : IServiceIndexService
     {
         private readonly IUrlGenerator _url;
 
-        public BaGetServiceIndex(IUrlGenerator url)
+        public NugetProxyServiceIndex(IUrlGenerator url)
         {
             _url = url ?? throw new ArgumentNullException(nameof(url));
         }

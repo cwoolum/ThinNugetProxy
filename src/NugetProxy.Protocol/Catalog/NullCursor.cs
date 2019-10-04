@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BaGet.Protocol.Catalog
+namespace NugetProxy.Protocol.Catalog
 {
     /// <summary>
     /// A cursor that does not persist any state. Use this with a <see cref="CatalogProcessor"/>

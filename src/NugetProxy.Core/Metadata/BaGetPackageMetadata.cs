@@ -1,14 +1,14 @@
 using System.Collections.Generic;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 using Newtonsoft.Json;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     /// <summary>
-    /// BaGet's extensions to the package metadata model. These additions
+    /// NugetProxy's extensions to the package metadata model. These additions
     /// are not part of the official protocol.
     /// </summary>
-    public class BaGetPackageMetadata : PackageMetadata
+    public class NugetProxyPackageMetadata : PackageMetadata
     {
         [JsonProperty("downloads")]
         public long Downloads { get; set; }

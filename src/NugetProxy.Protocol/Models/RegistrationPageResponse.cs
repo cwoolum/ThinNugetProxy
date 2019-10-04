@@ -1,4 +1,4 @@
-namespace BaGet.Protocol.Models
+namespace NugetProxy.Protocol.Models
 {
     /// <summary>
     /// A page of package metadata entries.

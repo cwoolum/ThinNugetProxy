@@ -1,7 +1,7 @@
 using System.Linq;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 
-namespace BaGet.Protocol
+namespace NugetProxy.Protocol
 {
     /// <summary>
     /// These are documented interpretations of values returned by the Service Index resource.

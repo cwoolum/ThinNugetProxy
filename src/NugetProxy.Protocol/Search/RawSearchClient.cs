@@ -1,4 +1,4 @@
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BaGet.Protocol.Internal
+namespace NugetProxy.Protocol.Internal
 {
     /// <summary>
     /// The client used to search for packages.

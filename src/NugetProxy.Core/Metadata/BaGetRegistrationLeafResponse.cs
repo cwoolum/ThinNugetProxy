@@ -1,13 +1,13 @@
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 using Newtonsoft.Json;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     /// <summary>
-    /// BaGet's extensions to a registration leaf response. These additions
+    /// NugetProxy's extensions to a registration leaf response. These additions
     /// are not part of the official protocol.
     /// </summary>
-    public class BaGetRegistrationLeafResponse : RegistrationLeafResponse
+    public class NugetProxyRegistrationLeafResponse : RegistrationLeafResponse
     {
         [JsonProperty("downloads")]
         public long Downloads { get; set; }

@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace BaGet.Protocol.Models
+namespace NugetProxy.Protocol.Models
 {
     /// <summary>
     /// An item in the <see cref="CatalogIndex"/> that references a <see cref="CatalogLeaf"/>.

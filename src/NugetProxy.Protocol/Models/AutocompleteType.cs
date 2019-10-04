@@ -1,4 +1,4 @@
-namespace BaGet.Protocol.Models
+namespace NugetProxy.Protocol.Models
 {
     /// <summary>
     /// The autocomplete request type.

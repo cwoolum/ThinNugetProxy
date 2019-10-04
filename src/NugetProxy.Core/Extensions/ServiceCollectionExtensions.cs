@@ -2,7 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     public static class ServiceCollectionExtensions
     {

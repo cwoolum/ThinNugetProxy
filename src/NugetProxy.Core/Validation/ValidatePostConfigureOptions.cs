@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     /// <summary>
     /// A configuration that validates options using data annotations.

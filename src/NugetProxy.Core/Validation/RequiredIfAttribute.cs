@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     /// <summary>
     /// Provides conditional validation based on related property value.

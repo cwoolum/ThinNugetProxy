@@ -1,7 +1,7 @@
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 using NuGet.Versioning;
 
-namespace BaGet.Protocol
+namespace NugetProxy.Protocol
 {
     /// <summary>
     /// These are documented interpretations of values returned by the Search resource.

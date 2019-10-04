@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace BaGet.Protocol.Models
+namespace NugetProxy.Protocol.Models
 {
     public class SearchContext
     {

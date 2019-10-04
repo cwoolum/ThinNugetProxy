@@ -1,10 +1,10 @@
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BaGet.Protocol.Internal
+namespace NugetProxy.Protocol.Internal
 {
     public class SearchClient : ISearchClient
     {
@@ -24,7 +24,7 @@ namespace BaGet.Protocol.Internal
             CancellationToken cancellationToken = default)
         {
             // TODO: Support search failover.
-            // See: https://github.com/loic-sharma/BaGet/issues/314
+            // See: https://github.com/loic-sharma/NugetProxy/issues/314
             var client = await _clientfactory.CreateSearchClientAsync(cancellationToken);
 
             return await client.SearchAsync(query, skip, take, includePrerelease, includeSemVer2);

@@ -1,10 +1,10 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Core;
+using NugetProxy.Core;
 using Microsoft.AspNetCore.Http;
 
-namespace BaGet.Extensions
+namespace NugetProxy.Extensions
 {
     public static class HttpRequestExtensions
     {

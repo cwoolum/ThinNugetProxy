@@ -1,7 +1,7 @@
-using BaGet.Protocol.Internal;
+using NugetProxy.Protocol.Internal;
 using Newtonsoft.Json;
 
-namespace BaGet.Protocol.Models
+namespace NugetProxy.Protocol.Models
 {
     /// <summary>
     /// Represents a package dependency.

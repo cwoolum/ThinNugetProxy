@@ -1,6 +1,6 @@
 using System;
 
-namespace BaGet.Protocol.Catalog
+namespace NugetProxy.Protocol.Catalog
 {
     /// <summary>
     /// The options to configure <see cref="CatalogProcessor"/>.

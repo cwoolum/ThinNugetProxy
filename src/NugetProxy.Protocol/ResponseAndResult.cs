@@ -1,9 +1,9 @@
 using System;
 using System.Net;
 using System.Net.Http;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol.Models;
 
-namespace BaGet.Protocol
+namespace NugetProxy.Protocol
 {
     internal class ResponseAndResult<T>
     {

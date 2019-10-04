@@ -1,4 +1,4 @@
-using BaGet.Configuration;
+using NugetProxy.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Http.Features;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 
-namespace BaGet.Core.Server.Extensions
+namespace NugetProxy.Core.Server.Extensions
 {
     public static class IServiceCollectionExtensions
     {
@@ -15,7 +15,7 @@ namespace BaGet.Core.Server.Extensions
         {
             services
                 .AddMvc()
-                .AddApplicationPart(typeof(BaGet.Controllers.PackageContentController).Assembly)
+                .AddApplicationPart(typeof(NugetProxy.Controllers.PackageContentController).Assembly)
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(options =>
                 {

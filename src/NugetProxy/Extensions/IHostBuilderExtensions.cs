@@ -3,12 +3,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace BaGet.Extensions
+namespace NugetProxy.Extensions
 {
     // See https://github.com/aspnet/MetaPackages/blob/master/src/Microsoft.AspNetCore/WebHost.cs
     public static class IHostBuilderExtensions
     {
-        public static IHostBuilder ConfigureBaGetConfiguration(this IHostBuilder builder, string[] args)
+        public static IHostBuilder ConfigureNugetProxyConfiguration(this IHostBuilder builder, string[] args)
         {
             return builder.ConfigureAppConfiguration((context, config) =>
             {
@@ -25,7 +25,7 @@ namespace BaGet.Extensions
             });
         }
 
-        public static IHostBuilder ConfigureBaGetLogging(this IHostBuilder builder)
+        public static IHostBuilder ConfigureNugetProxyLogging(this IHostBuilder builder)
         {
             return builder
                 .ConfigureLogging((context, logging) =>
@@ -36,10 +36,10 @@ namespace BaGet.Extensions
                 });
         }
 
-        public static IHostBuilder ConfigureBaGetServices(this IHostBuilder builder)
+        public static IHostBuilder ConfigureNugetProxyServices(this IHostBuilder builder)
         {
             return builder
-                .ConfigureServices((context, services) => services.ConfigureBaGet(context.Configuration));
+                .ConfigureServices((context, services) => services.ConfigureNugetProxy(context.Configuration));
         }
     }
 }

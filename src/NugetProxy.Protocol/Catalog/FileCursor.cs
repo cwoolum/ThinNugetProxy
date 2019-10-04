@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace BaGet.Protocol.Catalog
+namespace NugetProxy.Protocol.Catalog
 {
     /// <summary>
     /// A cursor implementation which stores the cursor in local file. The cursor value is written to the file as

@@ -1,12 +1,12 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Core.Content;
-using BaGet.Protocol.Models;
+using NugetProxy.Core.Content;
+using NugetProxy.Protocol.Models;
 using Microsoft.AspNetCore.Mvc;
 using NuGet.Versioning;
 
-namespace BaGet.Controllers
+namespace NugetProxy.Controllers
 {
     /// <summary>
     /// The Package Content resource, used to download content from packages.

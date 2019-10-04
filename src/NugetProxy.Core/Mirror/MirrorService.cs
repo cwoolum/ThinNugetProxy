@@ -4,12 +4,12 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using BaGet.Protocol;
-using BaGet.Protocol.Models;
+using NugetProxy.Protocol;
+using NugetProxy.Protocol.Models;
 using Microsoft.Extensions.Logging;
 using NuGet.Versioning;
 
-namespace BaGet.Core
+namespace NugetProxy.Core
 {
     public class MirrorService : IMirrorService
     {
@@ -128,7 +128,7 @@ namespace BaGet.Core
 
         private IEnumerable<PackageDependency> FindDependenciesFromDependencyGroup(DependencyGroupItem group)
         {
-            // BaGet stores a dependency group with no dependencies as a package dependency
+            // NugetProxy stores a dependency group with no dependencies as a package dependency
             // with no package id nor package version.
             if ((group.Dependencies?.Count ?? 0) == 0)
             {
