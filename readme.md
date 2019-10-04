@@ -33,13 +33,8 @@ services:
 
 steps:
 - bash: |
-    echo "Access Token: $(System.AccessToken) "
-
-    # This is the Host IP for this Agent. It needs to be passed to the Docker Build so that it can be used as a Nuget source.
-    hostip=$(ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+')
-
     echo -e "\e[34mBuilding Service\e[0m"
-    docker build -f Dockerfile  -t nugettest:latest --build-arg HOST_IP=$hostip .
+    docker build -f Dockerfile  -t nugettest:latest .
 
   displayName: "Build, tag and push image nugettest"
   failOnStderr: true
@@ -52,7 +47,7 @@ In your Dockerfile, you'll want to make sure that you add the host IP as a sourc
 FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS base
 WORKDIR /src
 
-ARG HOST_IP
+RUN HOST_IP=$(ip -4 route list match 0/0 | cut -d' ' -f3)
 
 COPY NugetTest.csproj .
 RUN dotnet restore NugetTest.csproj -s http://${HOST_IP}:8080/v3/index.json -s https://api.nuget.org/v3/index.json
