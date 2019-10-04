@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29104.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{26A0B557-53FB-4B9A-94C4-BCCF1BDCB0CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B44364D-952B-497A-82E0-C9AAE94E0369}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NugetProxy.Protocol", "src\NugetProxy.Protocol\NugetProxy.Protocol.csproj", "{8AECA9D7-95CA-4362-A116-EC549A3DCA72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NugetProxy.Core", "src\NugetProxy.Core\NugetProxy.Core.csproj", "{71141BB1-1322-4356-966B-AC81D0B6EAB9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NugetProxy.Core.Server", "src\NugetProxy.Core.Server\NugetProxy.Core.Server.csproj", "{E177C33D-3360-43B3-9CDF-3492B08A49FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NugetProxy", "src\NugetProxy\NugetProxy.csproj", "{681F3956-8C95-482B-AA0A-A605DD2C3939}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AECA9D7-95CA-4362-A116-EC549A3DCA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AECA9D7-95CA-4362-A116-EC549A3DCA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AECA9D7-95CA-4362-A116-EC549A3DCA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AECA9D7-95CA-4362-A116-EC549A3DCA72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71141BB1-1322-4356-966B-AC81D0B6EAB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71141BB1-1322-4356-966B-AC81D0B6EAB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71141BB1-1322-4356-966B-AC81D0B6EAB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71141BB1-1322-4356-966B-AC81D0B6EAB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E177C33D-3360-43B3-9CDF-3492B08A49FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E177C33D-3360-43B3-9CDF-3492B08A49FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E177C33D-3360-43B3-9CDF-3492B08A49FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E177C33D-3360-43B3-9CDF-3492B08A49FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{681F3956-8C95-482B-AA0A-A605DD2C3939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{681F3956-8C95-482B-AA0A-A605DD2C3939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{681F3956-8C95-482B-AA0A-A605DD2C3939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{681F3956-8C95-482B-AA0A-A605DD2C3939}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8AECA9D7-95CA-4362-A116-EC549A3DCA72} = {26A0B557-53FB-4B9A-94C4-BCCF1BDCB0CC}
+		{71141BB1-1322-4356-966B-AC81D0B6EAB9} = {26A0B557-53FB-4B9A-94C4-BCCF1BDCB0CC}
+		{E177C33D-3360-43B3-9CDF-3492B08A49FA} = {26A0B557-53FB-4B9A-94C4-BCCF1BDCB0CC}
+		{681F3956-8C95-482B-AA0A-A605DD2C3939} = {26A0B557-53FB-4B9A-94C4-BCCF1BDCB0CC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1423C027-2C90-417F-8629-2A4CF107C055}
+	EndGlobalSection
+EndGlobal
