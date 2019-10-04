@@ -4,6 +4,7 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
+
 COPY ["src/NugetProxy/NugetProxy.csproj", "src/NugetProxy/"]
 COPY ["src/NugetProxy.Core/NugetProxy.Core.csproj", "src/NugetProxy.Core/"]
 COPY ["src/NugetProxy.Protocol/NugetProxy.Protocol.csproj", "src/NugetProxy.Protocol/"]
